@@ -1,0 +1,59 @@
+{
+  "name": "dsh-desktop",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness desktop app: a lightweight ChatGPT-style window over the dsh web UI, with custom background images.",
+  "author": "Aliarrrrr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aliarrrrr/dsh-desktop.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "smoke": "node scripts/smoke.js",
+    "icon": "node scripts/gen-icon.js",
+    "bundle:server": "node scripts/bundle-server.mjs",
+    "security-check": "node scripts/verify-security.mjs",
+    "dist": "node scripts/bundle-server.mjs && electron-builder --win nsis",
+    "dist:dir": "node scripts/bundle-server.mjs && electron-builder --win dir"
+  },
+  "devDependencies": {
+    "electron": "^43.4.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ai.deepseek.dsh-desktop",
+    "productName": "DeepSeek Harness",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "bundle",
+        "to": "bundle",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DeepSeek Harness"
+    }
+  }
+}

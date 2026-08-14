@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<style>
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: grid; place-items: center; background: #0f1218; color: #e8eaed;
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  }
+  .wrap { text-align: center; }
+  .orb {
+    width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #6ea8ff, #2b5fd9);
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .title { font-size: 20px; font-weight: 600; letter-spacing: .04em; }
+  .hint { margin-top: 10px; font-size: 13px; color: #8a93a3; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.08); opacity: .85 } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="orb"></div>
+    <div class="title">DeepSeek Harness</div>
+    <div class="hint">正在启动本地服务…</div>
+  </div>
+</body>
+</html>

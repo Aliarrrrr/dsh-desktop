@@ -1,0 +1,15 @@
+node_modules/
+release/
+dist/
+bundle/
+.npm-cache/
+.electron-cache/
+.electron-builder-cache/
+.smoke-*/
+smoke-bg.png
+smoke-shot*.png
+probe-shot*.png
+elog.txt
+_escape_test.txt
+_bgstate_block.txt
+*.log
